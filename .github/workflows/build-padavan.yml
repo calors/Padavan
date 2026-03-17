@@ -97,6 +97,9 @@ jobs:
         #sed -i '/自定义项/d' .config
         #echo "自定义项=y" >> .config
         #########################################################################################
+        cd /opt/rt-n56u/toolchain-mipsel
+        # （推荐）使用脚本下载预编译的工具链：
+        sh dl_toolchain.sh
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
         sudo mv -f images/*.trx /opt/images/
